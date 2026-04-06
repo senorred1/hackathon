@@ -1,0 +1,17 @@
+{
+  "phase": "not_started",
+  "created_at": null,
+  "intake_processed_at": null,
+  "homepage_generated_at": null,
+  "homepage_approved_at": null,
+  "pages_generated_at": null,
+  "completed_at": null,
+  "pages": {
+    "discovered": [],
+    "planned": [],
+    "built": [],
+    "redirects": []
+  },
+  "test_results": null,
+  "seo_issues": []
+}

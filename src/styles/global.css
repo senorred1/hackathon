@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors - populated from intake/branding/colors.md */
+  --color-primary: oklch(0.5 0.2 250);
+  --color-secondary: oklch(0.7 0.15 200);
+  --color-accent: oklch(0.6 0.25 30);
+
+  /* Neutral scale */
+  --color-neutral-50: oklch(0.98 0 0);
+  --color-neutral-100: oklch(0.96 0 0);
+  --color-neutral-200: oklch(0.92 0 0);
+  --color-neutral-300: oklch(0.87 0 0);
+  --color-neutral-400: oklch(0.7 0 0);
+  --color-neutral-500: oklch(0.55 0 0);
+  --color-neutral-600: oklch(0.45 0 0);
+  --color-neutral-700: oklch(0.35 0 0);
+  --color-neutral-800: oklch(0.25 0 0);
+  --color-neutral-900: oklch(0.15 0 0);
+
+  /* Typography - populated from intake/branding/fonts.md */
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Spacing scale */
+  --spacing-section: 5rem;
+  --spacing-content: 2rem;
+}

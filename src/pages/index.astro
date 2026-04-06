@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Site Factory">
+  <main class="min-h-screen flex items-center justify-center">
+    <div class="text-center p-8">
+      <h1 class="text-4xl font-display font-bold text-primary mb-4">
+        Site Factory Ready
+      </h1>
+      <p class="text-lg text-neutral-600 mb-8">
+        Run <code class="bg-neutral-200 px-2 py-1 rounded">/project:intake</code> to begin.
+      </p>
+      <div class="text-sm text-neutral-500">
+        <p>1. Edit <code>intake/INTAKE.md</code> with your project details</p>
+        <p>2. Edit <code>intake/sitemap.md</code> with your page structure</p>
+        <p>3. Run the intake command to start generation</p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
