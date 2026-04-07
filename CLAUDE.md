@@ -93,6 +93,15 @@ Agent definitions in `.claude/agents/` provide detailed instructions for special
 - Playwright (functional testing)
 - Cloudflare Workers (deployment via wrangler)
 
+## Third-Party Scripts
+
+When adding any external script (GTM, BugHerd, Hotjar, chat widgets, etc.), two things will break it:
+
+1. **Always use `is:inline`** on external `<script>` tags — Astro will try to bundle them otherwise, causing CORS errors
+2. **Always update `public/_headers` CSP** — add the script's domains to the appropriate CSP directives
+
+See `docs/third-party-scripts.md` for the full guide, common scripts and their CSP requirements, and troubleshooting steps.
+
 ## Conventions
 
 - Components in `src/components/` use PascalCase

@@ -34,8 +34,17 @@ Run a comprehensive review of all generated pages and report findings. Fix what 
 - Navigation works on mobile (hamburger menu, etc.)
 
 ### 4. Scripts & Launch Readiness
+
+**Important:** Read `docs/third-party-scripts.md` for the full guide. When adding or checking scripts:
+- All external `<script>` tags MUST use `is:inline` (Astro will CORS-fail without it)
+- All script domains MUST be in `public/_headers` CSP directives
+- Check `docs/third-party-scripts.md` for known CSP requirements for common scripts (GTM, BugHerd, Hotjar, Intercom)
+
+Checks:
 - Check if GTM or GA is installed. If not, report: "GTM/GA not found. Need the GTM container ID or GA measurement ID to install."
 - Check the reference site's `<head>` for scripts that should carry over (chat widgets, tracking pixels, remarketing tags, heatmaps). Report any found with: "The reference site has [script]. Do you want this on the new site?"
+- Verify all external `<script>` tags in BaseLayout.astro use `is:inline`
+- Verify `public/_headers` CSP includes domains for all installed scripts
 - Check if BugHerd script is still present. If so, flag: "BugHerd script still installed. Remove before launch."
 - Check if `noindex` meta tag is still present. If so, flag: "noindex still set. Remove before launch."
 

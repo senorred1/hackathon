@@ -17,8 +17,15 @@ Prepare the site for production launch. Remove staging artifacts, verify all lau
 
 ### 2. Verify Scripts & Tracking
 
-- **GTM/GA** — check if Google Tag Manager or Google Analytics is installed. If not, report: "GTM/GA not found. Provide your GTM container ID (GTM-XXXXXX) or GA measurement ID (G-XXXXXX) to install."
-- **Reference site scripts** — check the reference site's `<head>` (from `reference/analysis.md` or by visiting the URL) for any scripts that should carry over: chat widgets, tracking pixels, remarketing tags, heatmaps, CRM integrations. Report any found with: "The reference site has [script]. Is this needed on the new site?"
+**Important:** Read `docs/third-party-scripts.md` before adding any scripts. All external scripts require:
+- `is:inline` directive on the `<script>` tag (Astro will CORS-fail without it)
+- CSP entries in `public/_headers` for the script's domains
+
+Checks:
+- **GTM/GA** — check if installed. If not, report: "GTM/GA not found. Provide your GTM container ID (GTM-XXXXXX) or GA measurement ID (G-XXXXXX) to install." When adding, use the CSP entries from `docs/third-party-scripts.md`.
+- **Reference site scripts** — check the reference site's `<head>` for scripts that should carry over. Report any found with: "The reference site has [script]. Is this needed on the new site?"
+- **Verify all external `<script>` tags use `is:inline`**
+- **Verify `public/_headers` CSP includes domains for all installed scripts**
 - **Verify all scripts from old site are accounted for** — either installed or explicitly declined.
 
 ### 3. Verify SEO Readiness
