@@ -115,6 +115,17 @@ CTA: [action text]
 ### For refinement
 Show diff of changes with rationale.
 
+## Content Accuracy Rules
+
+**CRITICAL:** Do not fabricate or assume business information.
+
+- **Never change hours, addresses, phone numbers, or contact info** unless explicitly told to
+- **Never add services the business doesn't offer** — only use services listed on the reference site or in intake materials
+- **Never fabricate testimonials, stats, or credentials** — only use real ones from the reference site
+- **Never assume how a procedure or service works** — only describe what the reference site describes
+- **Standard industry information is okay** (e.g., "what to expect during a dental cleaning") but should be clearly general, not presented as the practice's specific process
+- If information is missing, leave a placeholder or ask — don't make it up
+
 ## Guidelines
 
 - Keep paragraphs short (2-3 sentences)

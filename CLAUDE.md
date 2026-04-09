@@ -13,12 +13,10 @@ Run these in order. Each command checks state before proceeding.
 | `/generate-pages` | Build all remaining pages, create redirects, run tests and SEO audit | State: `homepage_approved` |
 | `/review` | Comprehensive pre-launch review (accessibility, images, responsiveness, scripts, links, build) | Any time |
 | `/test` | Playwright tests, responsive spot-checks, link verification | Any time |
-| `/content` | Generate or refine page copy using Content Writer agent | Any time (during or after homepage) |
 | `/launch` | Remove staging artifacts, verify scripts/SEO, build, deploy to production | After client sign-off |
 
 ### Utility commands
 
-- `/content` — Generate or refine copy for any page. Can target a specific page (`/content about`) or refine existing content (`/content --refine`). Use anytime during or after the homepage phase.
 - `/review` and `/test` — Can be run anytime, not just pre-launch. Useful during homepage iteration or after generating pages.
 
 ## State Management
@@ -80,7 +78,7 @@ Agent definitions in `.claude/agents/` provide detailed instructions for special
 - **color-system-generator** — Brand colors → full Tailwind v4 palettes with WCAG AA contrast
 - **typography-system-generator** — Fonts → fluid type scale, loading strategy, heading hierarchy
 - **component-builder** — Generate responsive, accessible Astro components
-- **content-writer** — Generate brand-aligned copy (used by `/content` command)
+- **content-writer** — Generate brand-aligned copy
 - **image-sourcer** — Download, optimize, and prepare images (no hotlinking, proper formats/dimensions)
 - **visual-qa** — Screenshot all breakpoints, compare against reference
 - **design-reviewer** — WCAG 2.2 AA compliance, responsive design, visual consistency

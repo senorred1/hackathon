@@ -16,7 +16,18 @@ disable-model-invocation: true
 
 ## Generation Steps
 
-### 1. Generate Each Planned Page
+### 1. Content Accuracy Rules
+
+**CRITICAL:** Do not fabricate or assume business information. Follow these rules for all generated content:
+
+- **Never change hours, addresses, phone numbers, or contact info** unless explicitly told to
+- **Never add services the business doesn't offer** — only use services listed on the reference site or in intake materials
+- **Never fabricate testimonials, stats, or credentials** — only use real ones from the reference site
+- **Never assume how a procedure or service works** — only describe what the reference site describes
+- **Standard industry information is okay** (e.g., "what to expect during a dental cleaning") but should be clearly general, not presented as the practice's specific process
+- If information is missing, leave a placeholder or ask — don't make it up
+
+### 2. Generate Each Planned Page
 
 For each page in `state.pages.planned` (excluding home):
 
@@ -28,7 +39,41 @@ For each page in `state.pages.planned` (excluding home):
 - Reference design from `reference/screenshots/` if available
 - Update `state.pages.built[]` after each page
 
-### 2. Handle Images for Each Page
+**Page type requirements:**
+
+#### Location pages
+- Locally SEO optimized (city/area name in title, meta description, headings, content)
+- Full address, phone, hours (including Saturday/special hours)
+- Google Maps embed or link
+- List of services offered at this location
+- Providers/doctors who work at this location with links to their pages
+- LocalBusiness structured data (JSON-LD) with address, geo, hours, phone
+- Insurance accepted (if available)
+- Unique content per location — don't duplicate the same text across locations
+
+#### Provider / doctor pages
+- Provider name, credentials (DDS, DMD, etc.), title
+- Headshot photo
+- Locations they work at with links to location pages
+- Services they provide
+- Education, affiliations, certifications
+- Bio content (from current site or intake)
+- Languages spoken
+- PersonSchema structured data
+- SEO: provider name + practice name + city in title
+
+#### Service pages
+- Clear description of the service
+- Benefits to the patient (not just features)
+- What to expect / the process (only if sourced from the reference site or standard industry info)
+- Related services with links
+- Which locations offer this service (if not all)
+- Which providers perform this service
+- CTA to book/contact
+- MedicalProcedure or Service structured data where appropriate
+- SEO: service name + practice name + city in title
+
+### 3. Handle Images for Each Page
 
 For every page, follow image-sourcer agent guidelines:
 - **Never hotlink** — all images must be saved locally in `public/images/`
@@ -38,7 +83,7 @@ For every page, follow image-sourcer agent guidelines:
 - Optimize formats: WebP/AVIF for photos, SVG for icons/logos
 - Compress appropriately
 
-### 3. Create Page-Specific Components
+### 4. Create Page-Specific Components
 
 As needed for unique page layouts:
 - Service cards
@@ -46,7 +91,7 @@ As needed for unique page layouts:
 - Contact forms
 - Gallery grids
 
-### 4. Generate Redirects File
+### 5. Generate Redirects File
 
 Create `public/_redirects` for Cloudflare Pages:
 
@@ -62,7 +107,7 @@ Format from `state.pages.redirects[]`:
 {from} {to} 301
 ```
 
-### 5. Run Playwright Tests
+### 6. Run Playwright Tests
 
 - All planned pages load (200 status)
 - All internal links resolve
@@ -70,14 +115,14 @@ Format from `state.pages.redirects[]`:
 - Forms submit without JS errors
 - Report failures but continue
 
-### 6. Run SEO Auditor Agent
+### 7. Run SEO Auditor Agent
 
 - Validate meta tags on all pages
 - Check Open Graph tags
 - Verify Lighthouse basics (Performance 80+, others 90+)
 - Report issues found
 
-### 7. Update State
+### 8. Update State
 
 ```json
 {
@@ -96,7 +141,7 @@ Format from `state.pages.redirects[]`:
 }
 ```
 
-### 8. Request Approval
+### 9. Request Approval
 
 Display to user:
 
