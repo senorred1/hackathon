@@ -209,9 +209,38 @@ Claude builds each page from the sitemap that isn't already built. This includes
 - Navigation links updated to point to real pages instead of `/404`
 - Redirects for any discovered pages that aren't in the sitemap (`public/_redirects`)
 
+### Content Accuracy
+
+**Do not fabricate or assume business information.** Never change hours, addresses, or contact info unless explicitly told to. Never add services the business doesn't offer. Never fabricate testimonials, stats, or credentials. If information is missing, leave a placeholder or ask — don't make it up. Standard industry information (e.g., "what to expect during a dental cleaning") is okay but should be general, not presented as the practice's specific process.
+
+### Page Type Requirements
+
+**Location pages** should be locally SEO optimized:
+- City/area name in title, meta description, and headings
+- Full address, phone, hours (including Saturday/special hours)
+- List of services offered at this location
+- Providers/doctors who work at this location
+- Insurance accepted
+- LocalBusiness structured data (JSON-LD)
+- Unique content per location — don't duplicate text across locations
+
+**Provider/doctor pages** should include:
+- Name, credentials (DDS, DMD, etc.), title, headshot
+- Locations they work at and services they provide
+- Education, affiliations, certifications
+- Bio content and languages spoken
+- PersonSchema structured data
+
+**Service pages** should include:
+- Clear description and patient benefits
+- What to expect (only if sourced from reference site or standard industry info)
+- Related services, which locations/providers offer it
+- CTA to book or contact
+- Service/MedicalProcedure structured data
+
 ### Your Role
 
-Less hands-on than the homepage, but still review each page in the browser. Look for:
+Review each page in the browser using the template approach — perfect one location page, one provider page, one service page, then apply to the rest. Look for:
 
 - Content accuracy — especially if Claude generated copy rather than pulling from a source
 - Layout issues — sections that look odd, images that don't fit
