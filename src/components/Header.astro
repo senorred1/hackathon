@@ -1,0 +1,114 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<!-- Top marquee -->
+<div class="marquee-bar" role="marquee" aria-label="CHOMPERZ announcements">
+  <span class="marquee-track" aria-hidden="true">
+    🦷 TEETH ARE SACRED &nbsp;✦&nbsp; FREE TOOTH READING WITH EVERY CLEANING &nbsp;✦&nbsp; NOW ACCEPTING BITCOIN, VIBES &amp; DENTAL INSURANCE (SPIRITUALLY) &nbsp;✦&nbsp; DR. MOLARSTONE HAS NEVER LOST A TOOTH* &nbsp;✦&nbsp; *THAT SHE WAS SUPPOSED TO KEEP &nbsp;✦&nbsp; OPEN 24/7 OR WHENEVER DR. MOLARSTONE WAKES UP &nbsp;✦&nbsp; MOUTH WHISPERING AVAILABLE TUESDAYS &nbsp;✦&nbsp; VOTED #1 DENTAL RAVE STUDIO IN THIS BUILDING &nbsp;✦&nbsp; 🦷 TEETH ARE SACRED &nbsp;✦&nbsp;
+  </span>
+</div>
+
+<header>
+  <a href="/" class="logo-wrap" aria-label="CHOMPERZ home">
+    <span class="logo-main">CHOMPERZ™</span>
+    <span class="logo-sub">Dental Experiences for the Spiritually Aligned</span>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href="/" class={currentPath === '/' ? 'nav-active' : ''}>Home</a>
+    <a href="/schedule" class="nav-cta">Book Now 🦷</a>
+  </nav>
+</header>
+
+<style>
+header {
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  background: rgba(13,13,26,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid #ff006e;
+  box-shadow: 0 0 40px rgba(255,0,110,.4);
+  padding: 14px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-wrap {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.logo-main {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ff006e, #00b4d8, #ccff00, #ff006e);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: logoShimmer 3s linear infinite;
+}
+
+.logo-sub {
+  font-size: .6rem;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,.4);
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: .8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: all .2s;
+}
+
+nav a:hover,
+nav a.nav-active {
+  border-color: #ccff00;
+  color: #ccff00;
+  box-shadow: 0 0 15px #ccff00;
+}
+
+nav a.nav-cta {
+  background: #ff006e;
+  border-color: #ff006e;
+  animation: navPulse 1.8s ease-in-out infinite;
+}
+
+nav a.nav-cta:hover {
+  transform: scale(1.05);
+  background: #ff3399;
+  color: #fff;
+  box-shadow: none;
+  border-color: #ff3399;
+}
+
+@media (max-width: 900px) {
+  header { padding: 14px 20px; }
+  .logo-main { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .logo-sub { display: none; }
+  nav a:not(.nav-cta) { display: none; }
+}
+</style>

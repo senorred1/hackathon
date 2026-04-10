@@ -1,47 +1,29 @@
 # Brand Typography
 
-Define your font choices here. Claude will configure Google Fonts and Tailwind.
-
 ## Font Families
 
 ### Display Font (Headings)
-**Font:** Inter
-**Weights:** 600 (Semibold), 700 (Bold)
-**Google Fonts URL:** https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap
+**Font:** Arial Black / Arial Bold
+**Weights:** 900 (Black)
+**Type:** System font — no Google Fonts import needed
+**Usage:** All headings, nav links, buttons, labels, stats — essentially everything uppercase
 
 ### Body Font (Text)
-**Font:** Inter
-**Weights:** 400 (Regular), 500 (Medium)
-**Google Fonts URL:** https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap
+**Font:** Georgia
+**Weights:** 400 (Regular), italic
+**Type:** System font — no Google Fonts import needed
+**Usage:** Paragraph copy, testimonials, pricing feature lists, footer descriptions
 
-## Alternative Options
+## Font Style Notes
 
-If you prefer different fonts, update above. Popular combinations:
-
-### Professional
-- Display: Playfair Display
-- Body: Source Sans Pro
-
-### Modern
-- Display: Poppins
-- Body: Inter
-
-### Classic
-- Display: Merriweather
-- Body: Open Sans
-
-### Tech
-- Display: Space Grotesk
-- Body: DM Sans
-
-## Font Loading Strategy
-
-Fonts are loaded via Google Fonts with `display=swap` to prevent layout shift.
-The browser will show a system font fallback until the custom font loads.
+- Text is almost universally `text-transform: uppercase` with wide `letter-spacing` for display elements
+- Body copy uses Georgia with `font-style: italic` and `line-height: 1.75–1.85`
+- Font size scale is aggressive: hero heading uses `clamp(3.5rem, 11vw, 9rem)`
+- Section labels use `.65rem` with `letter-spacing: 5px` in pink
+- Both fonts are system fonts — no external font loading required
 
 ## Custom Fonts
 
-If using custom fonts (not Google Fonts):
-1. Place font files in `public/fonts/`
-2. Create @font-face rules in global.css
-3. Update --font-display and --font-body in @theme
+No custom fonts or Google Fonts used. The design relies entirely on system fonts:
+- `'Arial Black', 'Arial Bold', sans-serif` — display/UI
+- `Georgia, serif` — body copy

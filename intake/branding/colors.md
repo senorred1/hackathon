@@ -1,41 +1,44 @@
 # Brand Colors
 
-Define your color palette here. Claude will use these to customize the Tailwind theme.
-
 ## Primary Colors
 
-**Primary:** #4f46e5 (Indigo)
-- Used for: Main CTA buttons, links, key UI elements
-- Hover state: Slightly darker
+**Primary:** #ff006e (Hot Pink)
+- Used for: Main CTA buttons, nav CTA, marquee bar, logo shimmer, section labels
+- Hover state: #ff3399
 
-**Secondary:** #0891b2 (Cyan)
-- Used for: Secondary actions, accents
+**Secondary:** #00b4d8 (Cyan)
+- Used for: Accents, stat bar borders, service card accents, dividers
 
-**Accent:** #f59e0b (Amber)
-- Used for: Highlights, badges, special callouts
+**Accent:** #ccff00 (Lime)
+- Used for: Highlights, stat numbers, hover states, ghost button, CTA section, outline headings
+
+## Extended Palette
+
+**Purple:** #7b2d8b
+- Used for: Pricing tier 1 gradient, doctor avatar, CTA section gradient
+
+**Gold:** #ffd700
+- Used for: Star ratings, doctor bio emphasis text
 
 ## Neutral Colors
 
-**Text:** #1f2937 (Gray 800)
-**Muted Text:** #6b7280 (Gray 500)
-**Background:** #ffffff (White)
-**Surface:** #f9fafb (Gray 50)
-**Border:** #e5e7eb (Gray 200)
+**Text:** #ffffff (White)
+**Muted Text:** rgba(255,255,255,0.75)
+**Background:** #0d0d1a (Deep dark navy)
+**Surface:** #09091a (Section background)
+**Footer:** #030308
+**Border:** rgba(255,255,255,0.08)
 
 ## Semantic Colors
 
-**Success:** #10b981 (Emerald)
-**Warning:** #f59e0b (Amber)
-**Error:** #ef4444 (Red)
-**Info:** #3b82f6 (Blue)
+**Success:** #ccff00 (Lime — reused as positive indicator)
+**Warning:** #ffd700 (Gold)
+**Error:** #ff006e (Pink)
+**Info:** #00b4d8 (Cyan)
 
 ---
 
 ## Color Format Notes
 
-For Tailwind v4 with oklch, colors will be converted automatically.
-You can also provide oklch values directly:
-
-```
-Primary: oklch(0.5 0.2 265)
-```
+Dark theme site — all colors are designed for use on near-black backgrounds.
+Glow effects are heavily used: box-shadow and text-shadow in brand colors are part of the aesthetic.

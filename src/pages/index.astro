@@ -1,21 +1,901 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Site Factory">
-  <main class="min-h-screen flex items-center justify-center">
-    <div class="text-center p-8">
-      <h1 class="text-4xl font-display font-bold text-primary mb-4">
-        Site Factory Ready
-      </h1>
-      <p class="text-lg text-neutral-600 mb-8">
-        Run <code class="bg-neutral-200 px-2 py-1 rounded">/project:intake</code> to begin.
-      </p>
-      <div class="text-sm text-neutral-500">
-        <p>1. Edit <code>intake/INTAKE.md</code> with your project details</p>
-        <p>2. Edit <code>intake/sitemap.md</code> with your page structure</p>
-        <p>3. Run the intake command to start generation</p>
+<BaseLayout
+  title="CHOMPERZ™ — Dental Experiences for the Spiritually Aligned"
+  description="Where cutting-edge dentistry meets chaotic spiritual energy. Book your mouth destiny in Los Angeles with Dr. Crystal Molarstone, DDS."
+>
+  <Header />
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-eyebrow" aria-label="Announcement">⚡ NOW ACCEPTING NEW MOUTHS — LIMITED SPOTS ⚡</div>
+    <h1>
+      <span class="h1-solid">YOUR TEETH</span>
+      <span class="h1-outline">DESERVE</span>
+      <span class="h1-solid">THE RAVE</span>
+      <span class="h1-tiny">✦ &nbsp; A DENTAL EXPERIENCE™ &nbsp; ✦</span>
+    </h1>
+    <p class="hero-sub">
+      Where cutting-edge dentistry meets <strong>chaotic spiritual energy.</strong><br />
+      We don't just clean teeth. We <strong>liberate them.</strong>
+    </p>
+    <div class="hero-btns">
+      <a href="/schedule" class="btn-primary">CLAIM YOUR MOUTH DESTINY</a>
+      <a href="#services" class="btn-ghost">VIEW SERVICES</a>
+    </div>
+  </section>
+
+  <!-- ═══ STATS BAR ═══ -->
+  <div class="stats-bar" aria-label="Practice statistics">
+    <div class="stat">
+      <span class="stat-num">47,000+</span>
+      <span class="stat-lbl">Teeth Liberated</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">∞</span>
+      <span class="stat-lbl">Spiritual Cleansings</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">4.9★</span>
+      <span class="stat-lbl">Stars (Self-Reported)</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">0</span>
+      <span class="stat-lbl">Complaints (That We Know Of)</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">1</span>
+      <span class="stat-lbl">Dimension We Operate In</span>
+    </div>
+  </div>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ═══ ABOUT ═══ -->
+  <div class="section-bg-dark" id="about">
+    <div class="section-wrap">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-lbl">About the Practice</span>
+          <h2 class="section-h2">
+            We Are Not<br />
+            <span class="hl">Just a Dentist</span>
+          </h2>
+          <p>CHOMPERZ™ was founded in 2019 when Dr. Crystal Molarstone had a <strong>vision</strong> — a vision involving a lot of teeth, some fog machines, and an overwhelming sense that dentistry was being done <em>wrong.</em></p>
+          <p>We are a <strong>full-spectrum dental experience studio</strong> located inside a former laser tag arena that still kind of smells like laser tag. We've added plants. Most of them are real.</p>
+          <p>Our philosophy: <strong>Your mouth is a portal.</strong> We treat it with the reverence it deserves — using state-of-the-art equipment, artisanal numbing gel, and a Spotify playlist that Dr. Molarstone personally curates every single morning at precisely 6:44am.</p>
+          <p>We believe in <strong>radical tooth transparency.</strong> If we see something, we say something. Even if it's just that your bicuspid has excellent energy and is clearly the main character of your mouth.</p>
+        </div>
+        <div class="about-visual" aria-hidden="true">
+          <div class="about-blob">
+            <span class="blob-emoji">🏢</span>
+            <p class="blob-text">
+              <strong>Our Office</strong><br />
+              Vibes: Immaculate (10/10)<br />
+              Formerly a laser tag arena.<br />
+              The lasers remain, repurposed for<br />
+              "precision cavity detection."
+            </p>
+            <span class="blob-sub">📍 123 Enamel Ave, Suite 🦷, Los Angeles</span>
+          </div>
+        </div>
       </div>
     </div>
-  </main>
+  </div>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ═══ MEET THE DOCTOR ═══ -->
+  <div class="doctor-outer" id="doctor">
+    <div class="doctor-inner">
+      <span class="section-lbl" style="display:block;text-align:center;margin-bottom:8px;">Meet Your Dental Guide</span>
+      <h2 class="section-h2" style="text-align:center;margin-bottom:46px;">
+        The One. The Only.<br />
+        <span style="color:#ccff00;-webkit-text-stroke:0;">The Legendary.</span>
+      </h2>
+      <div class="doctor-card">
+        <div class="dr-photo-col">
+          <div class="dr-avatar" aria-label="Dr. Crystal Molarstone avatar">🦷</div>
+          <div class="dr-name">Dr. Crystal<br />Molarstone</div>
+          <div class="dr-title">DDS · YOLO · BFF · PhD (Feelings)</div>
+        </div>
+        <div class="dr-bio">
+          <p>Dr. Crystal Molarstone has been described as <strong>"a dentist"</strong> by multiple licensing boards and <strong>"genuinely unsettling"</strong> by her college roommate. Neither description captures the full picture.</p>
+          <p>She trained at <strong>The University of Places</strong> (magna cum laude, Dental Division), completed a 3-year fellowship in <em>Advanced Molar Consciousness</em> at an institution she prefers not to name for "ongoing legal reasons," and briefly held the title of <strong>Regional Flossing Champion (Southwest Division, 2023).</strong></p>
+          <p>Dr. Molarstone believes that every tooth has a story, and she will tell you that story whether you want to hear it or not — typically while her hands are fully inside your mouth. Patients report this as "surprisingly comforting," "deeply confusing," and "actually kind of healing, I think?"</p>
+          <p>When not dentisting, she maintains the wellness blog <em>"Teeth &amp; Feelings,"</em> competes in local competitive flossing, and is currently finishing her memoir: <strong>"The Molar Diaries: A Love Story."</strong> She expects it to be a major award winner.</p>
+          <div class="creds" aria-label="Credentials">
+            <span class="cred">DDS, University of Places</span>
+            <span class="cred">Certified Mouth Whisperer</span>
+            <span class="cred">Reiki Level 2 (Teeth-Specific)</span>
+            <span class="cred">Regional Flossing Champion '23</span>
+            <span class="cred">Crystal Healing (Dental Track)</span>
+            <span class="cred">No Outstanding Warrants*</span>
+            <span class="cred">*As of Last Filing</span>
+            <span class="cred">Good Vibes Certified™</span>
+            <span class="cred">Ordained Tooth Minister</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ═══ SERVICES ═══ -->
+  <div id="services">
+    <div class="section-wrap">
+      <span class="section-lbl">What We Do To You</span>
+      <h2 class="section-h2">
+        Our Services<br />
+        <span class="hl">(A Partial List)</span>
+      </h2>
+      <p class="section-intro">We offer a full suite of dental experiences designed to transcend the ordinary concept of "going to the dentist." Every service includes a complimentary tooth reading and one (1) sticker. Sticker design is not negotiable.</p>
+      <div class="services-grid">
+        <article class="svc-card">
+          <span class="svc-icon" aria-hidden="true">✨</span>
+          <h3>The Illumination Cleaning</h3>
+          <p>Not just a cleaning. A <em>cleansing.</em> We remove plaque, tartar, and negative energy using our proprietary Sonic Purification Technology™, followed by a light misting of artisanal peppermint essential oil sourced from a small farm in Oregon.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-icon" aria-hidden="true">💎</span>
+          <h3>Diamond Whitening Ritual</h3>
+          <p>Eight shades whiter or we try again until we both feel good about it. Uses our signature Diamond Gel Formula, which contains no actual diamonds but does have an extremely aspirational name and a price point to match.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-icon" aria-hidden="true">🔮</span>
+          <h3>Deep Cavity Excavation</h3>
+          <p>We go in. We find what's there. We remove it. We fill it with a composite material that costs more than it should. We then provide a brief, heartfelt eulogy for the tooth structure that was lost. Sedation is available and honestly encouraged.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-icon" aria-hidden="true">👑</span>
+          <h3>The Crown Coronation</h3>
+          <p>Your damaged tooth deserves to be treated like royalty. Our crown placement includes a brief ceremony, a sash (dental bib), and Dr. Molarstone will play whatever song you request during the procedure, no questions asked, within reason.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-icon" aria-hidden="true">🚨</span>
+          <h3>Emergency Tooth Liberation</h3>
+          <p>Available 24/7 via our emergency line (please text first — Dr. Molarstone is not a morning person before 10am or an evening person after 9pm). We will free your tooth from its suffering for a slightly elevated after-hours energy surcharge.</p>
+        </article>
+        <article class="svc-card">
+          <span class="svc-icon" aria-hidden="true">🌀</span>
+          <h3>Orthodontic Alignment Journey</h3>
+          <p>For the tooth that just needs to "figure itself out." We offer traditional metal braces, clear aligners, and a 6-session emotional support coaching package to help your teeth stay motivated throughout the multi-year process. Results vary. Commitment required.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ═══ PRICING ═══ -->
+  <div class="pricing-outer" id="pricing">
+    <div class="pricing-inner">
+      <span class="section-lbl" style="display:block;text-align:center;">Investment in Your Mouth</span>
+      <h2 class="section-h2" style="text-align:center;margin-bottom:8px;">
+        The Menu<br />
+        <span style="color:#ccff00;">Choose Your Path</span>
+      </h2>
+      <p style="text-align:center;color:rgba(255,255,255,.45);font-family:Georgia,serif;">All plans include a complimentary tooth reading, playlist access, and one (1) sticker.</p>
+      <div class="pricing-grid">
+
+        <div class="p-card tier-1">
+          <span class="p-icon" aria-hidden="true">🦷</span>
+          <div class="p-tier-name">The Initiate</div>
+          <div class="p-price">$99</div>
+          <div class="p-period">per visit / per mouth</div>
+          <ul class="p-features">
+            <li>Standard cleaning + energy clearing</li>
+            <li>Complimentary X-rays (teeth only)</li>
+            <li>Basic tooth reading (1 tooth, your choice)</li>
+            <li>Waiting room WiFi access</li>
+            <li>One (1) sticker (design not negotiable)</li>
+            <li>Brief eye contact from Dr. Molarstone</li>
+          </ul>
+          <a href="/schedule" class="p-btn">Begin Journey</a>
+        </div>
+
+        <div class="p-card tier-2">
+          <span class="p-badge hot">MOST POPULAR</span>
+          <span class="p-icon" aria-hidden="true">💎</span>
+          <div class="p-tier-name">The Devotee</div>
+          <div class="p-price">$299</div>
+          <div class="p-period">per visit / full mouth experience</div>
+          <ul class="p-features">
+            <li>Everything in The Initiate</li>
+            <li>Deep cleaning (all four quadrants)</li>
+            <li>Full mouth reading (all 32 teeth)</li>
+            <li>Diamond whitening session</li>
+            <li>Post-procedure meditation (5 minutes)</li>
+            <li>Handwritten note from Dr. Molarstone</li>
+            <li>Priority rebooking privileges</li>
+          </ul>
+          <a href="/schedule" class="p-btn">Claim Devotee Status</a>
+        </div>
+
+        <div class="p-card tier-3">
+          <span class="p-badge asc">ASCENDANT</span>
+          <span class="p-icon" aria-hidden="true">🌟</span>
+          <div class="p-tier-name">The Transcendent</div>
+          <div class="p-price">$999</div>
+          <div class="p-period">quarterly / full transformation</div>
+          <ul class="p-features">
+            <li>Everything in The Devotee</li>
+            <li>Quarterly "Tooth Summit" check-in call</li>
+            <li>24/7 emergency access (no text required)</li>
+            <li>Custom playlist curated by Dr. Molarstone</li>
+            <li>Your name on The Wall of Molars</li>
+            <li>Exclusive CHOMPERZ™ merch drop access</li>
+            <li>One (1) framed X-ray as gallery wall art</li>
+            <li>Personal affirmation for each individual tooth</li>
+          </ul>
+          <a href="/schedule" class="p-btn">Transcend Now</a>
+        </div>
+
+      </div>
+      <p class="pricing-disclaimer">* All prices in USD. Subject to change based on vibes. Insurance accepted spiritually. We are not responsible for any personal revelations that occur mid-procedure. Ask about our family plan: "The Whole Mouth Family."</p>
+    </div>
+  </div>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <div id="testimonials">
+    <div class="section-wrap">
+      <span class="section-lbl">What The Mouths Are Saying</span>
+      <h2 class="section-h2">
+        Real Reviews<br />
+        <span class="hl">(Probably Real)</span>
+      </h2>
+      <div class="testi-grid">
+        <article class="testi-card">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <p class="testi-text">"I came in for a routine cleaning and left with a completely different understanding of myself as a person. My teeth have never looked better. My therapist says she's noticed a meaningful shift in my overall presence."</p>
+          <span class="testi-author">— Karen T., Accountant &amp; Now Tooth Enthusiast</span>
+        </article>
+        <article class="testi-card">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <p class="testi-text">"Dr. Molarstone looked at my molar and said it was 'holding onto something.' I don't know exactly what that means but I felt genuinely seen for the first time in years. She also fixed my cavity. Five stars. Would ascend again."</p>
+          <span class="testi-author">— Derek M., Software Engineer (Confused But Grateful)</span>
+        </article>
+        <article class="testi-card">
+          <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <p class="testi-text">"The fog machine in the waiting room was unexpected. Very unexpected. But then she gave me a holographic sticker and told me my canines have 'warrior energy' and honestly it was the most affirmed I have ever felt about my teeth. Five stars."</p>
+          <span class="testi-author">— Priya S., Marketing Manager (Still Processing, Still Recommending)</span>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ═══ SCHEDULE CTA ═══ -->
+  <section class="sched-cta" aria-label="Book appointment">
+    <h2>YOUR TEETH<br />ARE WAITING</h2>
+    <p>Don't make them wait any longer. Every day without a CHOMPERZ™ visit is a day your teeth spend in the dark, wondering if you care about them. They have feelings. We checked.</p>
+    <a href="/schedule" class="btn-big">SCHEDULE MY MOUTH DESTINY</a>
+    <p class="sched-nudge">No judgment. All mouths welcome. 🦷 Results may vary. Feelings guaranteed.</p>
+  </section>
+
+  <Footer />
 </BaseLayout>
+
+<style>
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 60%, #1a0044 0%, #0d0d1a 65%);
+  z-index: 1;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,0,110,.18) 0%, transparent 70%);
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  position: relative; z-index: 2;
+  background: #ff006e;
+  font-size: .65rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  animation: eyebrowBounce .6s ease infinite alternate;
+}
+
+.hero h1 {
+  position: relative; z-index: 2;
+  font-size: clamp(3.5rem, 11vw, 9rem);
+  font-weight: 900;
+  line-height: .88;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.h1-solid {
+  display: block;
+  background: linear-gradient(130deg, #fff 0%, #ccff00 55%, #00b4d8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.h1-outline {
+  display: block;
+  -webkit-text-stroke: 3px #ff006e;
+  color: transparent;
+  filter: drop-shadow(0 0 20px #ff006e);
+}
+
+.h1-tiny {
+  display: block;
+  font-size: .22em;
+  letter-spacing: 9px;
+  -webkit-text-fill-color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,.6);
+  -webkit-text-stroke: 0;
+  margin-top: 12px;
+}
+
+.hero-sub {
+  position: relative; z-index: 2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: rgba(255,255,255,.75);
+  max-width: 580px;
+  line-height: 1.7;
+  margin: 16px 0 40px;
+}
+
+.hero-sub strong { color: #ccff00; font-style: normal; font-family: 'Arial Black', sans-serif; }
+
+.hero-btns {
+  position: relative; z-index: 2;
+  display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff006e, #c8004e);
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 44px;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  display: inline-block;
+  animation: btnHot 1.4s ease-in-out infinite;
+  transition: transform .1s;
+}
+.btn-primary:hover { transform: scale(1.06); }
+
+.btn-ghost {
+  background: transparent;
+  color: #ccff00;
+  text-decoration: none;
+  padding: 16px 44px;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: 2px solid #ccff00;
+  display: inline-block;
+  transition: all .2s;
+}
+.btn-ghost:hover { background: #ccff00; color: #000; }
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background: linear-gradient(90deg, #0a0022, #0d0d1a, #0a0022);
+  border-top: 2px solid #00b4d8;
+  border-bottom: 2px solid #00b4d8;
+  padding: 28px 40px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.stat { text-align: center; }
+
+.stat-num {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #ccff00;
+  text-shadow: 0 0 20px #ccff00;
+  line-height: 1;
+}
+
+.stat-lbl {
+  font-size: .65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ── SECTION SHELL ── */
+.section-wrap {
+  padding: 80px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-bg-dark { background: #09091a; }
+
+.section-lbl {
+  font-size: .65rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #ff006e;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.section-h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: .95;
+  margin-bottom: 28px;
+}
+
+.section-h2 .hl {
+  color: transparent;
+  -webkit-text-stroke: 2px #ccff00;
+  display: block;
+}
+
+.section-intro {
+  color: rgba(255,255,255,.55);
+  max-width: 620px;
+  font-family: Georgia, serif;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-text p {
+  font-size: .95rem;
+  font-family: Georgia, serif;
+  color: rgba(255,255,255,.75);
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.about-text strong { color: #ccff00; font-family: 'Arial Black', sans-serif; }
+
+.about-visual { text-align: center; }
+
+.about-blob {
+  background: linear-gradient(135deg, rgba(255,0,110,.1), rgba(0,180,216,.12));
+  border: 1px solid rgba(255,0,110,.3);
+  border-radius: 12px;
+  padding: 44px 32px;
+  animation: blobFloat 4s ease-in-out infinite;
+}
+
+.blob-emoji { font-size: 7rem; display: block; margin-bottom: 12px; }
+.blob-text {
+  font-size: .85rem;
+  color: rgba(255,255,255,.5);
+  font-family: Georgia, serif;
+  line-height: 1.7;
+}
+.blob-text strong { color: #fff; }
+.blob-sub {
+  font-size: .7rem;
+  color: rgba(255,255,255,.3);
+  margin-top: 8px;
+  display: block;
+}
+
+/* ── DOCTOR ── */
+.doctor-outer {
+  background: linear-gradient(135deg, #08081e, #120030, #060e06);
+  padding: 80px 48px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.doctor-outer::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,0,110,.04) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+.doctor-inner { max-width: 1200px; margin: 0 auto; }
+
+.doctor-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(204,255,0,.18);
+  border-radius: 14px;
+  padding: 52px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 52px;
+  align-items: start;
+  backdrop-filter: blur(8px);
+}
+
+.dr-photo-col { text-align: center; }
+
+.dr-avatar {
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff006e, #7b2d8b, #00b4d8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 5.5rem;
+  margin: 0 auto 16px;
+  animation: avatarPulse 5s linear infinite;
+  border: 4px solid #ccff00;
+}
+
+.dr-name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ccff00, #00b4d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.dr-title {
+  font-size: .62rem;
+  color: #ff006e;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.dr-bio p {
+  font-size: .92rem;
+  font-family: Georgia, serif;
+  color: rgba(255,255,255,.75);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+
+.dr-bio strong { color: #fff; font-family: 'Arial Black', sans-serif; }
+.dr-bio em { color: #ffd700; font-style: italic; }
+
+.creds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.cred {
+  background: rgba(204,255,0,.08);
+  border: 1px solid rgba(204,255,0,.3);
+  color: #ccff00;
+  padding: 4px 12px;
+  font-size: .65rem;
+  letter-spacing: 1.5px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* ── SERVICES ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  margin-top: 48px;
+}
+
+.svc-card {
+  background: linear-gradient(135deg, rgba(255,255,255,.025), rgba(255,255,255,.06));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+
+.svc-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 3px; height: 100%;
+}
+.svc-card:nth-child(1)::before { background: #ff006e; }
+.svc-card:nth-child(2)::before { background: #00b4d8; }
+.svc-card:nth-child(3)::before { background: #ccff00; }
+.svc-card:nth-child(4)::before { background: #ffd700; }
+.svc-card:nth-child(5)::before { background: #7b2d8b; }
+.svc-card:nth-child(6)::before { background: #ff006e; }
+
+.svc-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,.2);
+  box-shadow: 0 24px 48px rgba(0,0,0,.4);
+}
+
+.svc-icon { font-size: 2.4rem; display: block; margin-bottom: 14px; }
+
+.svc-card h3 {
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.svc-card p {
+  font-size: .87rem;
+  color: rgba(255,255,255,.6);
+  line-height: 1.65;
+  font-family: Georgia, serif;
+}
+
+/* ── PRICING ── */
+.pricing-outer {
+  background: #050510;
+  padding: 80px 48px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.pricing-outer::before {
+  content: '🦷';
+  position: absolute;
+  font-size: 28rem;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .025;
+  pointer-events: none;
+}
+
+.pricing-inner { max-width: 1200px; margin: 0 auto; }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.p-card {
+  border-radius: 14px;
+  padding: 42px 30px 34px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s;
+}
+.p-card:hover { transform: translateY(-8px); }
+
+.p-card.tier-1 {
+  background: linear-gradient(135deg, rgba(123,45,139,.25), rgba(13,13,26,.95));
+  border: 1px solid rgba(123,45,139,.45);
+}
+.p-card.tier-2 {
+  background: linear-gradient(135deg, rgba(255,0,110,.22), rgba(13,13,26,.95));
+  border: 2px solid #ff006e;
+  box-shadow: 0 0 60px rgba(255,0,110,.18);
+}
+.p-card.tier-3 {
+  background: linear-gradient(135deg, rgba(204,255,0,.15), rgba(0,180,216,.15), rgba(13,13,26,.95));
+  border: 2px solid #ccff00;
+  box-shadow: 0 0 60px rgba(204,255,0,.12);
+}
+
+.p-badge {
+  position: absolute;
+  top: 14px; right: 14px;
+  font-size: .6rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  animation: eyebrowBounce .6s ease infinite alternate;
+}
+.p-badge.hot { background: #ff006e; color: #fff; }
+.p-badge.asc { background: #ccff00; color: #000; }
+
+.p-icon { font-size: 3rem; display: block; margin-bottom: 8px; }
+.p-tier-name { font-size: .65rem; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 8px; }
+.p-price { font-size: 3.8rem; font-weight: 900; line-height: 1; margin-bottom: 4px; }
+.tier-1 .p-price { color: #7b2d8b; text-shadow: 0 0 22px #7b2d8b; }
+.tier-2 .p-price { color: #ff006e; text-shadow: 0 0 22px #ff006e; }
+.tier-3 .p-price { color: #ccff00; text-shadow: 0 0 22px #ccff00; }
+.p-period { font-size: .62rem; color: rgba(255,255,255,.35); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; }
+
+.p-features { list-style: none; text-align: left; margin-bottom: 28px; }
+.p-features li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  font-size: .83rem;
+  color: rgba(255,255,255,.68);
+  font-family: Georgia, serif;
+}
+.p-features li::before { content: '🦷 '; }
+
+.p-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: .85rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: 'Arial Black', sans-serif;
+}
+.tier-1 .p-btn { background: rgba(123,45,139,.4); color: #fff; border: 1px solid #7b2d8b; }
+.tier-1 .p-btn:hover { background: #7b2d8b; }
+.tier-2 .p-btn { background: #ff006e; color: #fff; animation: btnHot 1.5s ease-in-out infinite; }
+.tier-3 .p-btn { background: #ccff00; color: #000; font-weight: 900; }
+.tier-3 .p-btn:hover { box-shadow: 0 0 35px #ccff00; }
+
+.pricing-disclaimer {
+  text-align: center;
+  margin-top: 28px;
+  font-size: .72rem;
+  color: rgba(255,255,255,.28);
+  font-family: Georgia, serif;
+}
+
+/* ── TESTIMONIALS ── */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  margin-top: 48px;
+}
+
+.testi-card {
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.stars { color: #ffd700; font-size: 1.1rem; display: block; margin-bottom: 14px; }
+
+.testi-text {
+  font-size: .9rem;
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: rgba(255,255,255,.7);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.testi-author {
+  font-size: .65rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ccff00;
+}
+
+/* ── SCHEDULE CTA ── */
+.sched-cta {
+  background: linear-gradient(135deg, #ff006e 0%, #7b2d8b 50%, #003060 100%);
+  padding: 110px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.sched-cta::before {
+  content: '🦷';
+  position: absolute;
+  font-size: 22rem;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .06;
+  pointer-events: none;
+  animation: toothSpin 20s linear infinite;
+}
+
+.sched-cta h2 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: .92;
+  margin-bottom: 22px;
+  position: relative; z-index: 1;
+}
+
+.sched-cta p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.82);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  font-family: Georgia, serif;
+  position: relative; z-index: 1;
+}
+
+.btn-big {
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  padding: 20px 64px;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative; z-index: 1;
+  transition: background .2s, transform .1s;
+  animation: bigBtnBreath 1.5s ease-in-out infinite;
+}
+.btn-big:hover { background: #ccff00; transform: scale(1.05); }
+
+.sched-nudge {
+  margin-top: 20px;
+  font-size: .75rem;
+  opacity: .55;
+  position: relative; z-index: 1;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .doctor-card { grid-template-columns: 1fr; }
+  .dr-avatar { width: 140px; height: 140px; font-size: 4rem; }
+}
+
+@media (max-width: 600px) {
+  .section-wrap { padding: 60px 20px; }
+  .pricing-outer,
+  .doctor-outer,
+  .sched-cta { padding: 60px 20px; }
+  .stats-bar { padding: 28px 20px; }
+}
+</style>

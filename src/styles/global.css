@@ -1,28 +1,128 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand colors - populated from intake/branding/colors.md */
-  --color-primary: oklch(0.5 0.2 250);
-  --color-secondary: oklch(0.7 0.15 200);
-  --color-accent: oklch(0.6 0.25 30);
+  --color-pink:    #ff006e;
+  --color-cyan:    #00b4d8;
+  --color-lime:    #ccff00;
+  --color-purple:  #7b2d8b;
+  --color-gold:    #ffd700;
+  --color-deep:    #0d0d1a;
+  --color-surface: #09091a;
 
-  /* Neutral scale */
-  --color-neutral-50: oklch(0.98 0 0);
-  --color-neutral-100: oklch(0.96 0 0);
-  --color-neutral-200: oklch(0.92 0 0);
-  --color-neutral-300: oklch(0.87 0 0);
-  --color-neutral-400: oklch(0.7 0 0);
-  --color-neutral-500: oklch(0.55 0 0);
-  --color-neutral-600: oklch(0.45 0 0);
-  --color-neutral-700: oklch(0.35 0 0);
-  --color-neutral-800: oklch(0.25 0 0);
-  --color-neutral-900: oklch(0.15 0 0);
+  --font-display: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+  --font-body:    Georgia, serif;
+}
 
-  /* Typography - populated from intake/branding/fonts.md */
-  --font-display: "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+/* ── RESETS ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* Spacing scale */
-  --spacing-section: 5rem;
-  --spacing-content: 2rem;
+body {
+  background: #0d0d1a;
+  color: #fff;
+  font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── CUSTOM CURSOR ── */
+#tcursor {
+  position: fixed;
+  font-size: 26px;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform .12s ease;
+}
+
+/* ── FLOATING BACKGROUND TEETH ── */
+.ft {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  0%   { transform: translateY(110vh) rotate(0deg);    opacity: 0; }
+  8%   { opacity: .22; }
+  92%  { opacity: .22; }
+  100% { transform: translateY(-120px) rotate(540deg); opacity: 0; }
+}
+
+/* ── TOP MARQUEE ── */
+.marquee-bar {
+  background: #ff006e;
+  padding: 7px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+}
+.marquee-track {
+  display: inline-block;
+  animation: marquee 22s linear infinite;
+  font-size: .8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+@keyframes marquee {
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(-100%); }
+}
+
+/* ── GRADIENT DIVIDER ── */
+.divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff006e, #00b4d8, #ccff00, transparent);
+}
+
+/* ── LOGO SHIMMER ── */
+@keyframes logoShimmer {
+  from { background-position: 0% 50%; }
+  to   { background-position: 300% 50%; }
+}
+
+/* ── NAV CTA PULSE ── */
+@keyframes navPulse {
+  0%, 100% { box-shadow: 0 0 8px #ff006e; }
+  50%       { box-shadow: 0 0 30px #ff006e, 0 0 60px rgba(255,0,110,.3); }
+}
+
+/* ── HERO ANIMATIONS ── */
+@keyframes pulseGlow {
+  from { transform: scale(1); opacity: .5; }
+  to   { transform: scale(1.4); opacity: 1; }
+}
+@keyframes eyebrowBounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-5px); }
+}
+@keyframes btnHot {
+  0%, 100% { box-shadow: 0 0 20px #ff006e; }
+  50%       { box-shadow: 0 0 50px #ff006e, 0 0 100px rgba(255,0,110,.25); }
+}
+@keyframes bigBtnBreath {
+  0%, 100% { box-shadow: 0 0 30px rgba(255,255,255,.25); }
+  50%       { box-shadow: 0 0 70px rgba(255,255,255,.5); }
+}
+
+/* ── DOCTOR AVATAR CYCLE ── */
+@keyframes avatarPulse {
+  0%   { border-color: #ccff00; box-shadow: 0 0 35px #ccff00; }
+  33%  { border-color: #ff006e; box-shadow: 0 0 35px #ff006e; }
+  66%  { border-color: #00b4d8; box-shadow: 0 0 35px #00b4d8; }
+  100% { border-color: #ccff00; box-shadow: 0 0 35px #ccff00; }
+}
+
+/* ── ABOUT BLOB FLOAT ── */
+@keyframes blobFloat {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%       { transform: translateY(-22px) rotate(3deg); }
+}
+
+/* ── CTA TOOTH SPIN ── */
+@keyframes toothSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
 }

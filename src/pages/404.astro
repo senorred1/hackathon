@@ -1,21 +1,116 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Page Not Found">
-  <main class="min-h-screen flex items-center justify-center bg-neutral-50">
-    <div class="text-center px-4">
-      <h1 class="text-8xl font-display font-bold text-primary mb-4">404</h1>
-      <h2 class="text-2xl font-display text-neutral-700 mb-4">Page Not Found</h2>
-      <p class="text-neutral-600 mb-8 max-w-md mx-auto">
-        The page you're looking for doesn't exist or has been moved.
+<BaseLayout
+  title="Page Not Found — CHOMPERZ™"
+  description="This tooth has gone missing. Return to CHOMPERZ™ homepage."
+  noindex={true}
+>
+  <Header />
+
+  <main class="not-found">
+    <div class="not-found-inner">
+      <div class="nf-glow" aria-hidden="true"></div>
+      <span class="nf-tooth" aria-hidden="true">🦷</span>
+      <h1 class="nf-code">404</h1>
+      <h2 class="nf-title">THIS TOOTH<br/><span class="nf-hl">HAS GONE MISSING</span></h2>
+      <p class="nf-body">
+        The page you're looking for has been liberated from this dimension.
+        Dr. Molarstone sends her apologies and one (1) complementary sticker.
       </p>
-      <a
-        href="/"
-        class="inline-block px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors"
-      >
-        Return Home
-      </a>
+      <a href="/" class="nf-btn">RETURN TO YOUR MOUTH DESTINY</a>
     </div>
   </main>
+
+  <Footer />
 </BaseLayout>
+
+<style>
+.not-found {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px;
+  background: radial-gradient(ellipse at 50% 50%, #1a0044 0%, #0d0d1a 70%);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.not-found-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.nf-glow {
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,0,110,.15) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.nf-tooth {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 16px;
+  animation: eyebrowBounce .8s ease infinite alternate;
+}
+
+.nf-code {
+  font-size: clamp(6rem, 18vw, 14rem);
+  font-weight: 900;
+  line-height: 1;
+  -webkit-text-stroke: 3px #ff006e;
+  color: transparent;
+  filter: drop-shadow(0 0 30px #ff006e);
+  margin-bottom: 8px;
+}
+
+.nf-title {
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: .95;
+  margin-bottom: 24px;
+}
+
+.nf-hl {
+  color: #ccff00;
+  display: block;
+}
+
+.nf-body {
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: rgba(255,255,255,.7);
+  max-width: 480px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.nf-btn {
+  background: linear-gradient(135deg, #ff006e, #c8004e);
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 44px;
+  font-size: .9rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  display: inline-block;
+  animation: btnHot 1.4s ease-in-out infinite;
+  transition: transform .1s;
+}
+.nf-btn:hover { transform: scale(1.06); }
+</style>

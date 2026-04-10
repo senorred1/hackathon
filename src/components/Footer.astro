@@ -1,0 +1,165 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="logo-wrap" aria-label="CHOMPERZ home">
+        <span class="logo-main">CHOMPERZ™</span>
+        <span class="logo-sub">Dental Experiences for the Spiritually Aligned</span>
+      </a>
+      <p>
+        Providing tooth liberation services since 2019. We are a licensed dental practice.
+        We have real diplomas. At least one of them is from an accredited institution.
+        Located in the former laser tag arena on Enamel Ave.
+      </p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/schedule">Schedule</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/schedule">Illumination Cleaning</a></li>
+        <li><a href="/schedule">Diamond Whitening</a></li>
+        <li><a href="/schedule">Crown Coronation</a></li>
+        <li><a href="/schedule">Emergency Liberation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:5558664863">📞 (555) TOOTH-ME</a></li>
+        <li><a href="mailto:hello@chomperz.dental">✉️ hello@chomperz.dental</a></li>
+        <li><span>📍 123 Enamel Ave, Suite 🦷, LA</span></li>
+        <li><span>⏰ Hours: Whenever, Mostly</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© {year} CHOMPERZ™ Dental Studio. All teeth reserved. <span>Made with 🦷 and excessive animation.</span></p>
+    <p>*Not responsible for spiritual awakenings, career changes, or sudden desire to learn about molars.</p>
+  </div>
+</footer>
+
+<style>
+footer {
+  background: #030308;
+  padding: 64px 48px 28px;
+  border-top: 1px solid rgba(255,255,255,.05);
+  position: relative;
+  z-index: 10;
+}
+
+.footer-grid {
+  max-width: 1200px;
+  margin: 0 auto 44px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.logo-wrap {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.logo-main {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ff006e, #00b4d8, #ccff00, #ff006e);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: logoShimmer 3s linear infinite;
+  display: block;
+}
+
+.logo-sub {
+  font-size: .6rem;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,.4);
+  text-transform: uppercase;
+  display: block;
+}
+
+.footer-brand p {
+  font-size: .82rem;
+  color: rgba(255,255,255,.38);
+  line-height: 1.75;
+  margin-top: 4px;
+  font-family: Georgia, serif;
+}
+
+footer h4 {
+  font-size: .62rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 18px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer ul li a,
+footer ul li span {
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+  font-size: .88rem;
+  transition: color .2s;
+  font-family: Georgia, serif;
+}
+
+footer ul li a:hover {
+  color: #ccff00;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom p {
+  font-size: .7rem;
+  color: rgba(255,255,255,.25);
+}
+
+.footer-bottom span {
+  color: #ff006e;
+}
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  footer { padding: 50px 20px 24px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+</style>
