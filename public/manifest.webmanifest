@@ -1,11 +1,11 @@
 {
-  "name": "[Business Name]",
-  "short_name": "[Short Name]",
-  "description": "[Business description]",
+  "name": "CHOMPERZ™ Dental Studio",
+  "short_name": "CHOMPERZ™",
+  "description": "Dental Experiences for the Spiritually Aligned — Los Angeles",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#0d0d1a",
+  "theme_color": "#c8005a",
   "icons": [
     {
       "src": "/icon-192.png",

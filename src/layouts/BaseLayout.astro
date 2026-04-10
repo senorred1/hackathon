@@ -53,49 +53,55 @@ const organizationData = {
     <StructuredData type="Organization" data={organizationData} />
   </head>
   <body>
-    <!-- Custom tooth cursor -->
-    <div id="tcursor">🦷</div>
+    <!-- Custom tooth cursor (decorative, screen-reader hidden) -->
+    <div id="tcursor" aria-hidden="true">🦷</div>
 
-    <!-- Floating background teeth & sparkles -->
-    <div class="ft" style="left:4%;  font-size:1.8rem; animation-duration:9s;  animation-delay:0s;">🦷</div>
-    <div class="ft" style="left:14%; font-size:1.2rem; animation-duration:13s; animation-delay:3s;">✨</div>
-    <div class="ft" style="left:27%; font-size:2.2rem; animation-duration:10s; animation-delay:1s;">🦷</div>
-    <div class="ft" style="left:42%; font-size:1.5rem; animation-duration:7s;  animation-delay:5s;">💎</div>
-    <div class="ft" style="left:57%; font-size:2rem;   animation-duration:11s; animation-delay:2s;">🦷</div>
-    <div class="ft" style="left:72%; font-size:1.3rem; animation-duration:8s;  animation-delay:4s;">✨</div>
-    <div class="ft" style="left:86%; font-size:1.9rem; animation-duration:12s; animation-delay:0.5s;">🦷</div>
-    <div class="ft" style="left:94%; font-size:1.1rem; animation-duration:9s;  animation-delay:6s;">⚡</div>
+    <!-- Floating background teeth & sparkles (decorative) -->
+    <div class="ft" aria-hidden="true" style="left:4%;  font-size:1.8rem; animation-duration:9s;  animation-delay:0s;">🦷</div>
+    <div class="ft" aria-hidden="true" style="left:14%; font-size:1.2rem; animation-duration:13s; animation-delay:3s;">✨</div>
+    <div class="ft" aria-hidden="true" style="left:27%; font-size:2.2rem; animation-duration:10s; animation-delay:1s;">🦷</div>
+    <div class="ft" aria-hidden="true" style="left:42%; font-size:1.5rem; animation-duration:7s;  animation-delay:5s;">💎</div>
+    <div class="ft" aria-hidden="true" style="left:57%; font-size:2rem;   animation-duration:11s; animation-delay:2s;">🦷</div>
+    <div class="ft" aria-hidden="true" style="left:72%; font-size:1.3rem; animation-duration:8s;  animation-delay:4s;">✨</div>
+    <div class="ft" aria-hidden="true" style="left:86%; font-size:1.9rem; animation-duration:12s; animation-delay:0.5s;">🦷</div>
+    <div class="ft" aria-hidden="true" style="left:94%; font-size:1.1rem; animation-duration:9s;  animation-delay:6s;">⚡</div>
 
     <slot />
 
     <script is:inline>
-      // Custom tooth cursor
-      const cur = document.getElementById('tcursor');
-      document.addEventListener('mousemove', e => {
-        cur.style.left = e.clientX + 'px';
-        cur.style.top  = e.clientY + 'px';
-      });
-      document.addEventListener('mousedown', () => {
-        cur.style.transform = 'translate(-50%,-50%) scale(1.6) rotate(25deg)';
-      });
-      document.addEventListener('mouseup', () => {
-        cur.style.transform = 'translate(-50%,-50%) scale(1) rotate(0deg)';
-      });
+      // Respect reduced motion — skip all decorative JS
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        // Custom tooth cursor
+        var cur = document.getElementById('tcursor');
+        if (cur) {
+          document.addEventListener('mousemove', function(e) {
+            cur.style.left = e.clientX + 'px';
+            cur.style.top  = e.clientY + 'px';
+          });
+          document.addEventListener('mousedown', function() {
+            cur.style.transform = 'translate(-50%,-50%) scale(1.6) rotate(25deg)';
+          });
+          document.addEventListener('mouseup', function() {
+            cur.style.transform = 'translate(-50%,-50%) scale(1) rotate(0deg)';
+          });
+        }
 
-      // Random sparkle pop
-      const sparks = ['🦷','✨','💎','⚡','🌟'];
-      setInterval(() => {
-        const el = document.createElement('div');
-        el.textContent = sparks[Math.floor(Math.random() * sparks.length)];
-        el.style.cssText = `position:fixed;left:${Math.random()*95}vw;top:${Math.random()*90}vh;font-size:${1.2+Math.random()*1.8}rem;pointer-events:none;z-index:9998;opacity:0;transition:all 0.9s ease;`;
-        document.body.appendChild(el);
-        requestAnimationFrame(() => {
-          el.style.opacity = '.7';
-          el.style.transform = `scale(1.6) rotate(${Math.random()*360}deg)`;
-        });
-        setTimeout(() => { el.style.opacity = '0'; el.style.transform = 'scale(0)'; }, 900);
-        setTimeout(() => el.remove(), 1900);
-      }, 2800);
+        // Random sparkle pop
+        var sparks = ['🦷','✨','💎','⚡','🌟'];
+        setInterval(function() {
+          var el = document.createElement('div');
+          el.setAttribute('aria-hidden', 'true');
+          el.textContent = sparks[Math.floor(Math.random() * sparks.length)];
+          el.style.cssText = 'position:fixed;left:' + (Math.random()*95) + 'vw;top:' + (Math.random()*90) + 'vh;font-size:' + (1.2+Math.random()*1.8) + 'rem;pointer-events:none;z-index:9998;opacity:0;transition:all 0.9s ease;';
+          document.body.appendChild(el);
+          requestAnimationFrame(function() {
+            el.style.opacity = '.7';
+            el.style.transform = 'scale(1.6) rotate(' + (Math.random()*360) + 'deg)';
+          });
+          setTimeout(function() { el.style.opacity = '0'; el.style.transform = 'scale(0)'; }, 900);
+          setTimeout(function() { el.remove(); }, 1900);
+        }, 2800);
+      }
     </script>
   </body>
 </html>

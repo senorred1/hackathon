@@ -2,11 +2,11 @@
 const year = new Date().getFullYear();
 ---
 
-<footer>
+<footer role="contentinfo">
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="/" class="logo-wrap" aria-label="CHOMPERZ home">
-        <span class="logo-main">CHOMPERZ™</span>
+        <span class="logo-main" aria-hidden="true">CHOMPERZ™</span>
         <span class="logo-sub">Dental Experiences for the Spiritually Aligned</span>
       </a>
       <p>
@@ -16,7 +16,7 @@ const year = new Date().getFullYear();
       </p>
     </div>
     <div>
-      <h4>Navigate</h4>
+      <p class="footer-col-label">Navigate</p>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/#about">About</a></li>
@@ -25,7 +25,7 @@ const year = new Date().getFullYear();
       </ul>
     </div>
     <div>
-      <h4>Services</h4>
+      <p class="footer-col-label">Services</p>
       <ul>
         <li><a href="/schedule">Illumination Cleaning</a></li>
         <li><a href="/schedule">Diamond Whitening</a></li>
@@ -34,7 +34,7 @@ const year = new Date().getFullYear();
       </ul>
     </div>
     <div>
-      <h4>Contact</h4>
+      <p class="footer-col-label">Contact</p>
       <ul>
         <li><a href="tel:5558664863">📞 (555) TOOTH-ME</a></li>
         <li><a href="mailto:hello@chomperz.dental">✉️ hello@chomperz.dental</a></li>
@@ -44,7 +44,7 @@ const year = new Date().getFullYear();
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© {year} CHOMPERZ™ Dental Studio. All teeth reserved. <span>Made with 🦷 and excessive animation.</span></p>
+    <p>© {year} CHOMPERZ™ Dental Studio. All teeth reserved. <span>Made with <span aria-hidden="true">🦷</span> and excessive animation.</span></p>
     <p>*Not responsible for spiritual awakenings, career changes, or sudden desire to learn about molars.</p>
   </div>
 </footer>
@@ -78,7 +78,7 @@ footer {
   font-size: 1.6rem;
   font-weight: 900;
   letter-spacing: 1px;
-  background: linear-gradient(90deg, #ff006e, #00b4d8, #ccff00, #ff006e);
+  background: linear-gradient(90deg, #c8005a, #00b4d8, #ccff00, #c8005a);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -90,25 +90,26 @@ footer {
 .logo-sub {
   font-size: .6rem;
   letter-spacing: 3px;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.7);
   text-transform: uppercase;
   display: block;
 }
 
 .footer-brand p {
   font-size: .82rem;
-  color: rgba(255,255,255,.38);
+  color: rgba(255,255,255,.7);
   line-height: 1.75;
   margin-top: 4px;
   font-family: Georgia, serif;
 }
 
-footer h4 {
+.footer-col-label {
   font-size: .62rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(255,255,255,.35);
+  color: rgba(255,255,255,.7);
   margin-bottom: 18px;
+  font-weight: 900;
 }
 
 footer ul {
@@ -121,7 +122,7 @@ footer ul li {
 
 footer ul li a,
 footer ul li span {
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,.7);
   text-decoration: none;
   font-size: .88rem;
   transition: color .2s;
@@ -146,11 +147,11 @@ footer ul li a:hover {
 
 .footer-bottom p {
   font-size: .7rem;
-  color: rgba(255,255,255,.25);
+  color: rgba(255,255,255,.7);
 }
 
 .footer-bottom span {
-  color: #ff006e;
+  color: #c8005a;
 }
 
 @media (max-width: 900px) {

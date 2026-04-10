@@ -11,7 +11,7 @@ import Footer from '../components/Footer.astro';
 >
   <Header />
 
-  <main class="not-found">
+  <main id="main-content" class="not-found">
     <div class="not-found-inner">
       <div class="nf-glow" aria-hidden="true"></div>
       <span class="nf-tooth" aria-hidden="true">🦷</span>
@@ -51,7 +51,7 @@ import Footer from '../components/Footer.astro';
   position: absolute;
   width: 500px; height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,0,110,.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200,0,90,.15) 0%, transparent 70%);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -69,9 +69,9 @@ import Footer from '../components/Footer.astro';
   font-size: clamp(6rem, 18vw, 14rem);
   font-weight: 900;
   line-height: 1;
-  -webkit-text-stroke: 3px #ff006e;
+  -webkit-text-stroke: 3px #c8005a;
   color: transparent;
-  filter: drop-shadow(0 0 30px #ff006e);
+  filter: drop-shadow(0 0 30px #c8005a);
   margin-bottom: 8px;
 }
 
@@ -99,7 +99,7 @@ import Footer from '../components/Footer.astro';
 }
 
 .nf-btn {
-  background: linear-gradient(135deg, #ff006e, #c8004e);
+  background: linear-gradient(135deg, #c8005a, #c8004e);
   color: #fff;
   text-decoration: none;
   padding: 16px 44px;

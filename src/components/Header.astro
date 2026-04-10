@@ -2,23 +2,63 @@
 const currentPath = Astro.url.pathname;
 ---
 
+<!-- Skip navigation (first focusable element) -->
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
 <!-- Top marquee -->
-<div class="marquee-bar" role="marquee" aria-label="CHOMPERZ announcements">
-  <span class="marquee-track" aria-hidden="true">
+<div class="marquee-bar" role="region" aria-label="CHOMPERZ announcements">
+  <button
+    class="marquee-pause"
+    id="marquee-toggle"
+    aria-pressed="false"
+    aria-label="Pause scrolling announcements"
+  >⏸ PAUSE</button>
+  <span class="marquee-track" id="marquee-track" aria-hidden="true">
     🦷 TEETH ARE SACRED &nbsp;✦&nbsp; FREE TOOTH READING WITH EVERY CLEANING &nbsp;✦&nbsp; NOW ACCEPTING BITCOIN, VIBES &amp; DENTAL INSURANCE (SPIRITUALLY) &nbsp;✦&nbsp; DR. MOLARSTONE HAS NEVER LOST A TOOTH* &nbsp;✦&nbsp; *THAT SHE WAS SUPPOSED TO KEEP &nbsp;✦&nbsp; OPEN 24/7 OR WHENEVER DR. MOLARSTONE WAKES UP &nbsp;✦&nbsp; MOUTH WHISPERING AVAILABLE TUESDAYS &nbsp;✦&nbsp; VOTED #1 DENTAL RAVE STUDIO IN THIS BUILDING &nbsp;✦&nbsp; 🦷 TEETH ARE SACRED &nbsp;✦&nbsp;
   </span>
 </div>
 
-<header>
+<header role="banner">
   <a href="/" class="logo-wrap" aria-label="CHOMPERZ home">
-    <span class="logo-main">CHOMPERZ™</span>
+    <span class="logo-main" aria-hidden="true">CHOMPERZ™</span>
     <span class="logo-sub">Dental Experiences for the Spiritually Aligned</span>
   </a>
   <nav aria-label="Main navigation">
-    <a href="/" class={currentPath === '/' ? 'nav-active' : ''}>Home</a>
-    <a href="/schedule" class="nav-cta">Book Now 🦷</a>
+    <a href="/" aria-current={currentPath === '/' ? 'page' : undefined}>Home</a>
+    <a href="/schedule" class="nav-cta">Book Now <span aria-hidden="true">🦷</span></a>
   </nav>
 </header>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById('marquee-toggle');
+    var track = document.getElementById('marquee-track');
+    if (!btn || !track) return;
+
+    // Respect reduced-motion: start paused if user prefers it
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var paused = prefersReduced;
+    if (paused) {
+      track.style.animationPlayState = 'paused';
+      btn.setAttribute('aria-pressed', 'true');
+      btn.setAttribute('aria-label', 'Play scrolling announcements');
+      btn.textContent = '▶ PLAY';
+    }
+
+    btn.addEventListener('click', function () {
+      paused = !paused;
+      track.style.animationPlayState = paused ? 'paused' : 'running';
+      btn.setAttribute('aria-pressed', String(paused));
+      if (paused) {
+        btn.setAttribute('aria-label', 'Play scrolling announcements');
+        btn.textContent = '▶ PLAY';
+      } else {
+        btn.setAttribute('aria-label', 'Pause scrolling announcements');
+        btn.textContent = '⏸ PAUSE';
+      }
+    });
+  })();
+</script>
 
 <style>
 header {
@@ -27,8 +67,8 @@ header {
   z-index: 500;
   background: rgba(13,13,26,.96);
   backdrop-filter: blur(12px);
-  border-bottom: 3px solid #ff006e;
-  box-shadow: 0 0 40px rgba(255,0,110,.4);
+  border-bottom: 3px solid #c8005a;
+  box-shadow: 0 0 40px rgba(200,0,90,.4);
   padding: 14px 48px;
   display: flex;
   justify-content: space-between;
@@ -47,7 +87,7 @@ header {
   font-size: 2rem;
   font-weight: 900;
   letter-spacing: 1px;
-  background: linear-gradient(90deg, #ff006e, #00b4d8, #ccff00, #ff006e);
+  background: linear-gradient(90deg, #c8005a, #00b4d8, #ccff00, #c8005a);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -58,7 +98,7 @@ header {
 .logo-sub {
   font-size: .6rem;
   letter-spacing: 3px;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.7);
   text-transform: uppercase;
 }
 
@@ -82,24 +122,24 @@ nav a {
 }
 
 nav a:hover,
-nav a.nav-active {
+nav a[aria-current="page"] {
   border-color: #ccff00;
   color: #ccff00;
   box-shadow: 0 0 15px #ccff00;
 }
 
 nav a.nav-cta {
-  background: #ff006e;
-  border-color: #ff006e;
+  background: #c8005a;
+  border-color: #c8005a;
   animation: navPulse 1.8s ease-in-out infinite;
 }
 
 nav a.nav-cta:hover {
   transform: scale(1.05);
-  background: #ff3399;
+  background: #e0006a;
   color: #fff;
   box-shadow: none;
-  border-color: #ff3399;
+  border-color: #e0006a;
 }
 
 @media (max-width: 900px) {

@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects
+# Format: /old-path  /new-path  301
+# No redirects defined — sitemap has no legacy pages.

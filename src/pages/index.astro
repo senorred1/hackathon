@@ -10,23 +10,40 @@ import Footer from '../components/Footer.astro';
 >
   <Header />
 
+  <main id="main-content">
+
   <!-- ═══ HERO ═══ -->
-  <section class="hero" aria-label="Hero">
+  <section class="hero" aria-labelledby="hero-heading">
     <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-eyebrow" aria-label="Announcement">⚡ NOW ACCEPTING NEW MOUTHS — LIMITED SPOTS ⚡</div>
-    <h1>
-      <span class="h1-solid">YOUR TEETH</span>
-      <span class="h1-outline">DESERVE</span>
-      <span class="h1-solid">THE RAVE</span>
-      <span class="h1-tiny">✦ &nbsp; A DENTAL EXPERIENCE™ &nbsp; ✦</span>
-    </h1>
-    <p class="hero-sub">
-      Where cutting-edge dentistry meets <strong>chaotic spiritual energy.</strong><br />
-      We don't just clean teeth. We <strong>liberate them.</strong>
-    </p>
-    <div class="hero-btns">
-      <a href="/schedule" class="btn-primary">CLAIM YOUR MOUTH DESTINY</a>
-      <a href="#services" class="btn-ghost">VIEW SERVICES</a>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-eyebrow" aria-hidden="true">⚡ NOW ACCEPTING NEW MOUTHS — LIMITED SPOTS ⚡</p>
+        <h1 id="hero-heading">
+          <span class="h1-solid">YOUR TEETH</span>
+          <span class="h1-outline">DESERVE</span>
+          <span class="h1-solid">THE RAVE</span>
+          <span class="h1-tiny">✦ &nbsp; A DENTAL EXPERIENCE™ &nbsp; ✦</span>
+        </h1>
+        <p class="hero-sub">
+          Where cutting-edge dentistry meets <strong>chaotic spiritual energy.</strong><br />
+          We don't just clean teeth. We <strong>liberate them.</strong>
+        </p>
+        <div class="hero-btns">
+          <a href="/schedule" class="btn-primary">CLAIM YOUR MOUTH DESTINY</a>
+          <a href="#services" class="btn-ghost">VIEW SERVICES</a>
+        </div>
+      </div>
+      <div class="hero-photo" aria-hidden="false">
+        <img
+          src="/images/hero-office.jpg"
+          alt="CHOMPERZ™ dental studio — Dr. Molarstone with a patient in the precision cavity detection chair"
+          width="1400"
+          height="763"
+          loading="eager"
+          fetchpriority="high"
+          class="hero-img"
+        />
+      </div>
     </div>
   </section>
 
@@ -57,12 +74,12 @@ import Footer from '../components/Footer.astro';
   <div class="divider" aria-hidden="true"></div>
 
   <!-- ═══ ABOUT ═══ -->
-  <div class="section-bg-dark" id="about">
+  <section class="section-bg-dark" id="about" aria-labelledby="about-heading">
     <div class="section-wrap">
       <div class="about-grid">
         <div class="about-text">
           <span class="section-lbl">About the Practice</span>
-          <h2 class="section-h2">
+          <h2 id="about-heading" class="section-h2">
             We Are Not<br />
             <span class="hl">Just a Dentist</span>
           </h2>
@@ -71,36 +88,43 @@ import Footer from '../components/Footer.astro';
           <p>Our philosophy: <strong>Your mouth is a portal.</strong> We treat it with the reverence it deserves — using state-of-the-art equipment, artisanal numbing gel, and a Spotify playlist that Dr. Molarstone personally curates every single morning at precisely 6:44am.</p>
           <p>We believe in <strong>radical tooth transparency.</strong> If we see something, we say something. Even if it's just that your bicuspid has excellent energy and is clearly the main character of your mouth.</p>
         </div>
-        <div class="about-visual" aria-hidden="true">
-          <div class="about-blob">
-            <span class="blob-emoji">🏢</span>
-            <p class="blob-text">
-              <strong>Our Office</strong><br />
-              Vibes: Immaculate (10/10)<br />
-              Formerly a laser tag arena.<br />
-              The lasers remain, repurposed for<br />
-              "precision cavity detection."
-            </p>
-            <span class="blob-sub">📍 123 Enamel Ave, Suite 🦷, Los Angeles</span>
+        <div class="about-visual">
+          <div class="about-photo-wrap">
+            <img
+              src="/images/office-about.jpg"
+              alt="Dr. Crystal Molarstone in the CHOMPERZ™ precision cavity detection studio"
+              width="900"
+              height="491"
+              loading="lazy"
+              class="about-photo"
+            />
+            <span class="about-photo-caption">📍 123 Enamel Ave, Suite 🦷, Los Angeles — Formerly a laser tag arena. The lasers remain.</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="divider" aria-hidden="true"></div>
 
   <!-- ═══ MEET THE DOCTOR ═══ -->
-  <div class="doctor-outer" id="doctor">
+  <section class="doctor-outer" id="doctor" aria-labelledby="doctor-heading">
     <div class="doctor-inner">
       <span class="section-lbl" style="display:block;text-align:center;margin-bottom:8px;">Meet Your Dental Guide</span>
-      <h2 class="section-h2" style="text-align:center;margin-bottom:46px;">
+      <h2 id="doctor-heading" class="section-h2" style="text-align:center;margin-bottom:46px;">
         The One. The Only.<br />
         <span style="color:#ccff00;-webkit-text-stroke:0;">The Legendary.</span>
       </h2>
       <div class="doctor-card">
         <div class="dr-photo-col">
-          <div class="dr-avatar" aria-label="Dr. Crystal Molarstone avatar">🦷</div>
+          <img
+            src="/images/dr-molarstone.jpg"
+            alt="Dr. Crystal Molarstone, DDS — founder of CHOMPERZ™"
+            width="800"
+            height="436"
+            loading="lazy"
+            class="dr-photo"
+          />
           <div class="dr-name">Dr. Crystal<br />Molarstone</div>
           <div class="dr-title">DDS · YOLO · BFF · PhD (Feelings)</div>
         </div>
@@ -123,15 +147,15 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="divider" aria-hidden="true"></div>
 
   <!-- ═══ SERVICES ═══ -->
-  <div id="services">
+  <section id="services" aria-labelledby="services-heading">
     <div class="section-wrap">
       <span class="section-lbl">What We Do To You</span>
-      <h2 class="section-h2">
+      <h2 id="services-heading" class="section-h2">
         Our Services<br />
         <span class="hl">(A Partial List)</span>
       </h2>
@@ -169,15 +193,15 @@ import Footer from '../components/Footer.astro';
         </article>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="divider" aria-hidden="true"></div>
 
   <!-- ═══ PRICING ═══ -->
-  <div class="pricing-outer" id="pricing">
+  <section class="pricing-outer" id="pricing" aria-labelledby="pricing-heading">
     <div class="pricing-inner">
       <span class="section-lbl" style="display:block;text-align:center;">Investment in Your Mouth</span>
-      <h2 class="section-h2" style="text-align:center;margin-bottom:8px;">
+      <h2 id="pricing-heading" class="section-h2" style="text-align:center;margin-bottom:8px;">
         The Menu<br />
         <span style="color:#ccff00;">Choose Your Path</span>
       </h2>
@@ -240,15 +264,15 @@ import Footer from '../components/Footer.astro';
       </div>
       <p class="pricing-disclaimer">* All prices in USD. Subject to change based on vibes. Insurance accepted spiritually. We are not responsible for any personal revelations that occur mid-procedure. Ask about our family plan: "The Whole Mouth Family."</p>
     </div>
-  </div>
+  </section>
 
   <div class="divider" aria-hidden="true"></div>
 
   <!-- ═══ TESTIMONIALS ═══ -->
-  <div id="testimonials">
+  <section id="testimonials" aria-labelledby="testimonials-heading">
     <div class="section-wrap">
       <span class="section-lbl">What The Mouths Are Saying</span>
-      <h2 class="section-h2">
+      <h2 id="testimonials-heading" class="section-h2">
         Real Reviews<br />
         <span class="hl">(Probably Real)</span>
       </h2>
@@ -270,17 +294,19 @@ import Footer from '../components/Footer.astro';
         </article>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="divider" aria-hidden="true"></div>
 
   <!-- ═══ SCHEDULE CTA ═══ -->
-  <section class="sched-cta" aria-label="Book appointment">
-    <h2>YOUR TEETH<br />ARE WAITING</h2>
+  <section class="sched-cta" aria-labelledby="cta-heading">
+    <h2 id="cta-heading">YOUR TEETH<br />ARE WAITING</h2>
     <p>Don't make them wait any longer. Every day without a CHOMPERZ™ visit is a day your teeth spend in the dark, wondering if you care about them. They have feelings. We checked.</p>
     <a href="/schedule" class="btn-big">SCHEDULE MY MOUTH DESTINY</a>
-    <p class="sched-nudge">No judgment. All mouths welcome. 🦷 Results may vary. Feelings guaranteed.</p>
+    <p class="sched-nudge"><span aria-hidden="true">🦷</span> No judgment. All mouths welcome. Results may vary. Feelings guaranteed.</p>
   </section>
+
+  </main><!-- /#main-content -->
 
   <Footer />
 </BaseLayout>
@@ -293,26 +319,55 @@ import Footer from '../components/Footer.astro';
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 80px 24px 60px;
+  padding: 80px 48px 60px;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(ellipse at 50% 60%, #1a0044 0%, #0d0d1a 65%);
+  background: radial-gradient(ellipse at 30% 60%, #1a0044 0%, #0d0d1a 65%);
   z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 0, 110, 0.5);
+  box-shadow: 0 0 40px rgba(255, 0, 110, 0.25), 0 0 80px rgba(0, 180, 216, 0.1);
+  display: block;
 }
 
 .hero-glow {
   position: absolute;
   width: 700px; height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,0,110,.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200,0,90,.18) 0%, transparent 70%);
   animation: pulseGlow 4s ease-in-out infinite alternate;
   pointer-events: none;
 }
 
 .hero-eyebrow {
-  position: relative; z-index: 2;
-  background: #ff006e;
+  background: #c8005a;
   font-size: .65rem;
   font-weight: 900;
   letter-spacing: 4px;
@@ -324,8 +379,7 @@ import Footer from '../components/Footer.astro';
 }
 
 .hero h1 {
-  position: relative; z-index: 2;
-  font-size: clamp(3.5rem, 11vw, 9rem);
+  font-size: clamp(3rem, 7vw, 7rem);
   font-weight: 900;
   line-height: .88;
   text-transform: uppercase;
@@ -342,9 +396,9 @@ import Footer from '../components/Footer.astro';
 
 .h1-outline {
   display: block;
-  -webkit-text-stroke: 3px #ff006e;
+  -webkit-text-stroke: 3px #c8005a;
   color: transparent;
-  filter: drop-shadow(0 0 20px #ff006e);
+  filter: drop-shadow(0 0 20px #c8005a);
 }
 
 .h1-tiny {
@@ -358,8 +412,7 @@ import Footer from '../components/Footer.astro';
 }
 
 .hero-sub {
-  position: relative; z-index: 2;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 400;
   font-family: Georgia, serif;
   font-style: italic;
@@ -372,12 +425,11 @@ import Footer from '../components/Footer.astro';
 .hero-sub strong { color: #ccff00; font-style: normal; font-family: 'Arial Black', sans-serif; }
 
 .hero-btns {
-  position: relative; z-index: 2;
-  display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
+  display: flex; flex-wrap: wrap; gap: 16px;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ff006e, #c8004e);
+  background: linear-gradient(135deg, #c8005a, #c8004e);
   color: #fff;
   text-decoration: none;
   padding: 16px 44px;
@@ -457,7 +509,7 @@ import Footer from '../components/Footer.astro';
   font-size: .65rem;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: #ff006e;
+  color: #c8005a;
   margin-bottom: 8px;
   display: block;
 }
@@ -504,27 +556,29 @@ import Footer from '../components/Footer.astro';
 
 .about-visual { text-align: center; }
 
-.about-blob {
-  background: linear-gradient(135deg, rgba(255,0,110,.1), rgba(0,180,216,.12));
-  border: 1px solid rgba(255,0,110,.3);
+.about-photo-wrap {
+  position: relative;
   border-radius: 12px;
-  padding: 44px 32px;
-  animation: blobFloat 4s ease-in-out infinite;
+  overflow: hidden;
+  border: 1px solid rgba(200,0,90,.4);
+  box-shadow: 0 0 40px rgba(200,0,90,.18), 0 0 80px rgba(0,180,216,.08);
+  animation: blobFloat 5s ease-in-out infinite;
 }
 
-.blob-emoji { font-size: 7rem; display: block; margin-bottom: 12px; }
-.blob-text {
-  font-size: .85rem;
-  color: rgba(255,255,255,.5);
-  font-family: Georgia, serif;
-  line-height: 1.7;
-}
-.blob-text strong { color: #fff; }
-.blob-sub {
-  font-size: .7rem;
-  color: rgba(255,255,255,.3);
-  margin-top: 8px;
+.about-photo {
   display: block;
+  width: 100%;
+  height: auto;
+}
+
+.about-photo-caption {
+  display: block;
+  padding: 12px 16px;
+  font-size: .72rem;
+  color: rgba(255,255,255,.45);
+  font-family: Georgia, serif;
+  background: rgba(0,0,0,.4);
+  line-height: 1.5;
 }
 
 /* ── DOCTOR ── */
@@ -539,7 +593,7 @@ import Footer from '../components/Footer.astro';
 .doctor-outer::before {
   content: '';
   position: absolute; inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(255,0,110,.04) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(200,0,90,.04) 1px, transparent 0);
   background-size: 32px 32px;
 }
 
@@ -559,15 +613,15 @@ import Footer from '../components/Footer.astro';
 
 .dr-photo-col { text-align: center; }
 
-.dr-avatar {
-  width: 180px; height: 180px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ff006e, #7b2d8b, #00b4d8);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 5.5rem;
-  margin: 0 auto 16px;
+.dr-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 3px solid #ccff00;
+  box-shadow: 0 0 30px rgba(204,255,0,.3);
   animation: avatarPulse 5s linear infinite;
-  border: 4px solid #ccff00;
 }
 
 .dr-name {
@@ -583,7 +637,7 @@ import Footer from '../components/Footer.astro';
 
 .dr-title {
   font-size: .62rem;
-  color: #ff006e;
+  color: #c8005a;
   letter-spacing: 2.5px;
   text-transform: uppercase;
   margin-top: 6px;
@@ -642,12 +696,12 @@ import Footer from '../components/Footer.astro';
   left: 0; top: 0;
   width: 3px; height: 100%;
 }
-.svc-card:nth-child(1)::before { background: #ff006e; }
+.svc-card:nth-child(1)::before { background: #c8005a; }
 .svc-card:nth-child(2)::before { background: #00b4d8; }
 .svc-card:nth-child(3)::before { background: #ccff00; }
 .svc-card:nth-child(4)::before { background: #ffd700; }
 .svc-card:nth-child(5)::before { background: #7b2d8b; }
-.svc-card:nth-child(6)::before { background: #ff006e; }
+.svc-card:nth-child(6)::before { background: #c8005a; }
 
 .svc-card:hover {
   transform: translateY(-6px);
@@ -716,9 +770,9 @@ import Footer from '../components/Footer.astro';
   border: 1px solid rgba(123,45,139,.45);
 }
 .p-card.tier-2 {
-  background: linear-gradient(135deg, rgba(255,0,110,.22), rgba(13,13,26,.95));
-  border: 2px solid #ff006e;
-  box-shadow: 0 0 60px rgba(255,0,110,.18);
+  background: linear-gradient(135deg, rgba(200,0,90,.22), rgba(13,13,26,.95));
+  border: 2px solid #c8005a;
+  box-shadow: 0 0 60px rgba(200,0,90,.18);
 }
 .p-card.tier-3 {
   background: linear-gradient(135deg, rgba(204,255,0,.15), rgba(0,180,216,.15), rgba(13,13,26,.95));
@@ -737,14 +791,14 @@ import Footer from '../components/Footer.astro';
   text-transform: uppercase;
   animation: eyebrowBounce .6s ease infinite alternate;
 }
-.p-badge.hot { background: #ff006e; color: #fff; }
+.p-badge.hot { background: #c8005a; color: #fff; }
 .p-badge.asc { background: #ccff00; color: #000; }
 
 .p-icon { font-size: 3rem; display: block; margin-bottom: 8px; }
 .p-tier-name { font-size: .65rem; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 8px; }
 .p-price { font-size: 3.8rem; font-weight: 900; line-height: 1; margin-bottom: 4px; }
 .tier-1 .p-price { color: #7b2d8b; text-shadow: 0 0 22px #7b2d8b; }
-.tier-2 .p-price { color: #ff006e; text-shadow: 0 0 22px #ff006e; }
+.tier-2 .p-price { color: #c8005a; text-shadow: 0 0 22px #c8005a; }
 .tier-3 .p-price { color: #ccff00; text-shadow: 0 0 22px #ccff00; }
 .p-period { font-size: .62rem; color: rgba(255,255,255,.35); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; }
 
@@ -775,7 +829,7 @@ import Footer from '../components/Footer.astro';
 }
 .tier-1 .p-btn { background: rgba(123,45,139,.4); color: #fff; border: 1px solid #7b2d8b; }
 .tier-1 .p-btn:hover { background: #7b2d8b; }
-.tier-2 .p-btn { background: #ff006e; color: #fff; animation: btnHot 1.5s ease-in-out infinite; }
+.tier-2 .p-btn { background: #c8005a; color: #fff; animation: btnHot 1.5s ease-in-out infinite; }
 .tier-3 .p-btn { background: #ccff00; color: #000; font-weight: 900; }
 .tier-3 .p-btn:hover { box-shadow: 0 0 35px #ccff00; }
 
@@ -823,7 +877,7 @@ import Footer from '../components/Footer.astro';
 
 /* ── SCHEDULE CTA ── */
 .sched-cta {
-  background: linear-gradient(135deg, #ff006e 0%, #7b2d8b 50%, #003060 100%);
+  background: linear-gradient(135deg, #c8005a 0%, #7b2d8b 50%, #003060 100%);
   padding: 110px 48px;
   text-align: center;
   position: relative;
@@ -885,10 +939,19 @@ import Footer from '../components/Footer.astro';
 }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; gap: 40px; }
+  .hero { background: radial-gradient(ellipse at 50% 60%, #1a0044 0%, #0d0d1a 65%); }
+  .hero-text { text-align: center; }
+  .hero-btns { justify-content: center; }
+  .hero h1 { font-size: clamp(3rem, 10vw, 6rem); }
+  .hero-photo { max-width: 640px; margin: 0 auto; }
+}
+
 @media (max-width: 900px) {
+  .hero { padding: 80px 24px 60px; }
   .about-grid { grid-template-columns: 1fr; }
   .doctor-card { grid-template-columns: 1fr; }
-  .dr-avatar { width: 140px; height: 140px; font-size: 4rem; }
 }
 
 @media (max-width: 600px) {
